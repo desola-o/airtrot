@@ -61,6 +61,22 @@
             top: 20px;
             z-index: 30;
             backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+
+        /* Native Details Expand/Collapse Polish */
+        details > summary {
+            list-style: none;
+        }
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
+        details[open] summary ~ div {
+            animation: slideDown 0.3s ease-out forwards;
+        }
+        @keyframes slideDown {
+            0% { opacity: 0; transform: translateY(-10px); }
+            100% { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
@@ -113,14 +129,14 @@
                     Follow the action across all 16 host cities. Find your match, note the gate, and let our concierge handle the logistics.
                 </p>
                 <div class="mt-6 flex gap-4">
-                    <a href="tel:+13186181178" class="bg-white text-black px-6 py-3 rounded-full text-sm font-bold flex items-center gap-2 hover:bg-brand-lightCard transition-all shadow-lg active:scale-95">
-                        Call Concierge <i class="ph-bold ph-phone-call"></i>
+                    <a href="https://form.typeform.com/to/qBdRUgis" target="_blank" class="bg-white text-black px-6 py-3 rounded-full text-sm font-bold flex items-center gap-2 hover:bg-brand-lightCard transition-all shadow-lg active:scale-95">
+                        Plan My World Cup Trip <i class="ph-bold ph-airplane-tilt"></i>
                     </a>
                 </div>
             </div>
 
             <!-- Loader / Container -->
-            <div id="fixtures-container" class="w-full flex flex-col gap-8 relative">
+            <div id="fixtures-container" class="w-full flex flex-col gap-4 relative">
                 <!-- Data will render here dynamically via JS -->
             </div>
 
@@ -1127,6 +1143,9 @@ New York/New Jersey Stadium
             const container = document.getElementById('fixtures-container');
             let html = '';
 
+            let isFirstDate = true;
+            let isFirstMatchOverall = true; // Identifies the opening match
+
             for (const [date, matches] of Object.entries(grouped)) {
                 
                 // Format Date nicely
@@ -1134,19 +1153,80 @@ New York/New Jersey Stadium
                 const formattedDate = `<span class="text-white/50 mr-2">${dateParts[0]}</span> ${dateParts.slice(1).join(' ')}`;
 
                 html += `
-                <div class="flex flex-col mb-4">
-                    <!-- Sticky Date Header -->
-                    <div class="sticky-date bg-[#1A1614]/80 border border-white/10 rounded-xl px-5 py-3 mb-4 shadow-lg flex items-center justify-between">
-                        <h2 class="text-lg font-bold tracking-wide">${formattedDate}</h2>
-                        <span class="text-[10px] uppercase font-bold text-brand-green bg-brand-green/10 px-3 py-1 rounded-full">${matches.length} Match${matches.length > 1 ? 'es' : ''}</span>
-                    </div>
+                <details class="group mb-2 w-full" ${isFirstDate ? 'open' : ''}>
+                    <!-- Collapsed/Expanded Header (Sticky) -->
+                    <summary class="sticky-date bg-[#1A1614]/90 border border-white/10 rounded-xl px-5 py-4 shadow-lg flex items-center justify-between cursor-pointer hover:bg-[#2A2420]/80 transition-colors">
+                        <div class="flex items-center gap-3">
+                            <div class="w-6 h-6 shrink-0 flex items-center justify-center rounded-full bg-white/5 border border-white/10 group-open:bg-brand-green/20 group-open:border-brand-green/30 transition-colors">
+                                <i class="ph-bold ph-caret-right transition-transform duration-300 group-open:rotate-90 text-white/70 group-open:text-brand-green"></i>
+                            </div>
+                            <h2 class="text-base md:text-lg font-bold tracking-wide">${formattedDate}</h2>
+                        </div>
+                        <span class="text-[10px] md:text-xs shrink-0 uppercase font-bold text-brand-green bg-brand-green/10 px-3 py-1.5 rounded-full border border-brand-green/20">${matches.length} Match${matches.length > 1 ? 'es' : ''}</span>
+                    </summary>
 
-                    <!-- Match Cards -->
-                    <div class="flex flex-col gap-3">
+                    <!-- Match Cards Container -->
+                    <div class="flex flex-col gap-3 mt-3 overflow-hidden px-1 pb-2">
                 `;
 
                 matches.forEach(m => {
-                    html += `
+                    if (isFirstMatchOverall) {
+                        // --- SPECIAL OPENING MATCH CARD ---
+                        html += `
+                        <div class="bg-gradient-to-br from-brand-gold/30 via-[#2A2420] to-[#2A2420] border-2 border-brand-gold/50 rounded-[24px] p-1 shadow-[0_0_25px_rgba(255,193,7,0.15)] relative overflow-hidden group transition-transform hover:-translate-y-1 mb-2">
+                            <!-- Opening Match Badge -->
+                            <div class="absolute top-0 left-1/2 -translate-x-1/2 bg-brand-gold text-brand-dark text-[10px] md:text-xs font-black tracking-widest uppercase px-6 py-1 rounded-b-xl shadow-lg z-20 flex items-center gap-2">
+                                <i class="ph-fill ph-star"></i> Opening Match <i class="ph-fill ph-star"></i>
+                            </div>
+                            
+                            <!-- Glow Effect -->
+                            <div class="absolute -top-24 -right-24 w-48 h-48 bg-brand-gold/20 blur-3xl rounded-full pointer-events-none"></div>
+
+                            <div class="bg-[#1A1614]/80 backdrop-blur-md rounded-[20px] p-5 pt-8 md:pt-6 flex flex-col md:flex-row items-center gap-4 relative z-10">
+                                
+                                <!-- Left Info -->
+                                <div class="flex flex-col items-center md:items-start w-full md:w-36 shrink-0 border-b md:border-b-0 md:border-r border-white/10 pb-4 md:pb-0 md:pr-4">
+                                    <span class="text-4xl font-black text-brand-gold drop-shadow-md">${m.time}</span>
+                                    <span class="text-[10px] text-brand-gold/80 uppercase font-bold tracking-widest mt-1 text-center md:text-left">${m.stage}</span>
+                                    ${m.group ? `<span class="text-xs font-black text-brand-dark mt-1 bg-brand-gold px-2 py-0.5 rounded shadow-sm">${m.group}</span>` : ''}
+                                </div>
+                                
+                                <!-- Middle VS -->
+                                <div class="flex-1 flex items-center justify-between w-full px-2 md:px-6 py-4 md:py-0">
+                                    <div class="flex items-center gap-3 md:gap-4 w-[42%] justify-end">
+                                        <span class="font-black text-lg md:text-xl text-right leading-tight text-white drop-shadow-md">${m.team1}</span>
+                                        <div class="w-14 h-14 md:w-16 md:h-16 rounded-full overflow-hidden bg-black border-2 border-brand-gold/50 shrink-0 shadow-[0_0_15px_rgba(255,193,7,0.3)] group-hover:scale-110 transition-transform duration-500">
+                                            ${getFlagElement(m.team1)}
+                                        </div>
+                                    </div>
+                                    <div class="w-[16%] flex justify-center shrink-0 relative">
+                                        <div class="flex flex-col items-center">
+                                            <span class="text-sm md:text-base font-black text-white bg-black/80 px-3 py-2 rounded-xl border border-white/10 shadow-xl relative z-10">VS</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center gap-3 md:gap-4 w-[42%] justify-start">
+                                        <div class="w-14 h-14 md:w-16 md:h-16 rounded-full overflow-hidden bg-black border-2 border-brand-gold/50 shrink-0 shadow-[0_0_15px_rgba(255,193,7,0.3)] group-hover:scale-110 transition-transform duration-500">
+                                            ${getFlagElement(m.team2)}
+                                        </div>
+                                        <span class="font-black text-lg md:text-xl text-left leading-tight text-white drop-shadow-md">${m.team2}</span>
+                                    </div>
+                                </div>
+
+                                <!-- Right Location -->
+                                <div class="w-full md:w-56 shrink-0 flex flex-col items-center md:items-end justify-center pt-4 md:pt-0 border-t md:border-t-0 border-white/10">
+                                    <div class="flex items-center gap-2 mb-2 bg-white/5 px-3 py-1.5 rounded-lg border border-white/10">
+                                        <i class="ph-fill ph-map-pin text-brand-gold text-lg"></i>
+                                        <span class="text-sm text-white font-medium leading-tight text-center md:text-right">
+                                            ${m.stadium.replace(/\(([^)]+)\)/g, '<br><span class="text-xs text-brand-gold/70 uppercase tracking-wider font-bold">$1</span>')}
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        `;
+                    } else {
+                        // --- REGULAR MATCH CARD ---
+                        html += `
                         <div class="bg-[#2A2420] border border-white/5 rounded-[20px] p-4 flex flex-col md:flex-row items-center gap-4 hover:bg-[#352D28] hover:border-white/15 transition-all duration-300 group shadow-md relative overflow-hidden">
                             
                             <!-- Left Info -->
@@ -1188,10 +1268,13 @@ New York/New Jersey Stadium
                                 </div>
                             </div>
                         </div>
-                    `;
+                        `;
+                    }
+                    isFirstMatchOverall = false;
                 });
 
-                html += `</div></div>`;
+                html += `</div></details>`;
+                isFirstDate = false; // Collapse all days after the first one
             }
 
             container.innerHTML = html;
