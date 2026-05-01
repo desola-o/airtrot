@@ -1,15 +1,15 @@
+html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google Tag Manager -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MG73MXMSK9"></script>
     <script>
-    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id=GT-MK48ZHF5'+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GT-MK48ZHF5');
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-MG73MXMSK9');
     </script>
-    <!-- End Google Tag Manager -->
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -129,11 +129,6 @@
 </head>
 <body class="min-h-screen overflow-x-hidden text-white font-sans relative flex flex-col items-center selection:bg-brand-blue selection:text-white p-4 sm:p-6 lg:p-12">
     
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GT-MK48ZHF5"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-
     <!-- Background Environment -->
     <div class="fixed inset-0 z-0 pointer-events-none">
         <img src="https://i.ibb.co/MkkF9m0p/ferdinand-stohr-wo-YNcu-Q2-BLg-unsplash-1.jpg" alt="Airtrot Travels Background" class="w-full h-full object-cover object-center scale-105 filter brightness-90">
@@ -162,7 +157,7 @@
                         <a href="https://airtrottravels.com" class="px-4 sm:px-6 py-1.5 sm:py-2.5 rounded-full text-xs sm:text-sm font-medium text-white/60 hover:text-white hover:bg-white/5 transition-all">Home</a>
                         <a href="https://wc2026.airtrottravels.com/flights" class="px-4 sm:px-6 py-1.5 sm:py-2.5 rounded-full text-xs sm:text-sm font-medium text-white/60 hover:text-white hover:bg-white/5 transition-all">Flights</a>
                         <a href="https://wc2026.airtrottravels.com/stays" class="px-4 sm:px-6 py-1.5 sm:py-2.5 rounded-full text-xs sm:text-sm font-medium text-white/60 hover:text-white hover:bg-white/5 transition-all">Accommodation</a>
-                        <a href="#tickets" class="px-4 sm:px-6 py-1.5 sm:py-2.5 rounded-full text-xs sm:text-sm font-medium text-white/60 hover:text-white hover:bg-white/5 transition-all">Match tickets</a>
+                        <a href="https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/tickets" target="_blank" rel="noopener noreferrer" class="px-4 sm:px-6 py-1.5 sm:py-2.5 rounded-full text-xs sm:text-sm font-medium text-white/60 hover:text-white hover:bg-white/5 transition-all">Match tickets</a>
                         <a href="https://store.fifa.com/en-gb" class="px-4 sm:px-6 py-1.5 sm:py-2.5 rounded-full text-xs sm:text-sm font-medium text-white/60 hover:text-white hover:bg-white/5 transition-all">Shop</a>
                     </div>
                 </nav>
@@ -302,6 +297,7 @@
                         </h4>
                     </div>
                     
+                    <!-- 3-Column Top Grid -->
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 w-full">
                         
                         <!-- Flight Bookings LINKED -->
@@ -344,8 +340,8 @@
                             </div>
                         </a>
 
-                        <!-- Match Tickets -->
-                        <div class="bg-[#2A2420] border border-white/10 rounded-[20px] lg:rounded-[24px] overflow-hidden relative group cursor-pointer flex flex-col h-full shadow-lg">
+                        <!-- Match Tickets LINKED to FIFA -->
+                        <a href="https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/tickets" target="_blank" rel="noopener noreferrer" class="bg-[#2A2420] border border-white/10 rounded-[20px] lg:rounded-[24px] overflow-hidden relative group cursor-pointer flex flex-col h-full shadow-lg block transition-transform hover:-translate-y-1">
                             <div class="w-full h-40 lg:h-48 relative overflow-hidden shrink-0 bg-black">
                                 <img src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=600&h=400&fit=crop" alt="Stadium Matches" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
                                 <!-- Subtle Bokeh Glow -->
@@ -356,13 +352,13 @@
                                 <div class="w-8 h-8 lg:w-10 lg:h-10 rounded-full bg-white/10 flex items-center justify-center mb-3 shrink-0 border border-white/5">
                                     <i class="ph ph-ticket text-white text-lg lg:text-xl"></i>
                                 </div>
-                                <h3 class="text-base lg:text-lg font-bold text-white mb-1 leading-tight tracking-wide">Tickets</h3>
-                                <p class="text-xs lg:text-sm text-white/60 mb-4 pr-2">Guaranteed premium seating and VIP hospitality.</p>
-                                <button class="w-8 h-8 lg:w-9 lg:h-9 rounded-full bg-white text-black flex items-center justify-center shadow-md group-hover:bg-brand-blue group-hover:text-white transition-colors mt-auto self-end shrink-0">
+                                <h3 class="text-base lg:text-lg font-bold text-white mb-1 leading-tight tracking-wide">Match Tickets</h3>
+                                <p class="text-xs lg:text-sm text-white/60 mb-4 pr-2">Explore official match schedules, ticket options and verified resale availability.</p>
+                                <button class="w-8 h-8 lg:w-9 lg:h-9 rounded-full bg-white text-black flex items-center justify-center shadow-md group-hover:bg-brand-blue group-hover:text-white transition-colors mt-auto self-end shrink-0 pointer-events-none">
                                     <i class="ph-bold ph-arrow-right text-xs"></i>
                                 </button>
                             </div>
-                        </div>
+                        </a>
 
                         <!-- Official Merch LINKED -->
                         <a href="https://store.fifa.com/en-gb" class="bg-[#2A2420] border border-white/10 rounded-[20px] lg:rounded-[24px] overflow-hidden relative group cursor-pointer flex flex-col h-full shadow-lg block transition-transform hover:-translate-y-1">
@@ -387,7 +383,7 @@
                         <!-- Visa Requirements Checker LINKED & RENAMED -->
                         <a href="https://wc2026.airtrottravels.com/visa-checker" class="bg-[#2A2420] border border-white/10 rounded-[20px] lg:rounded-[24px] overflow-hidden relative group cursor-pointer flex flex-col h-full shadow-lg block transition-transform hover:-translate-y-1">
                             <div class="w-full h-40 lg:h-48 relative overflow-hidden shrink-0 bg-black">
-                                <img src="https://i.ibb.co/v6m4r67B/anete-lusina-r-FKBUw-Lg-WQ-unsplash.jpg" alt="Visa Checker" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
+                                <img src="https://i.ibb.co/v6m4r67B/anete-lusina-r-FKBUwLg-WQ-unsplash.jpg" alt="Visa Checker" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
                                 <!-- Subtle Bokeh Glow -->
                                 <div class="absolute inset-x-0 bottom-0 h-20 bg-brand-blue/20 blur-[20px] pointer-events-none z-10 mix-blend-screen"></div>
                                 <div class="absolute top-2 left-6 w-16 h-16 bg-white/20 rounded-full blur-[15px] pointer-events-none z-10 mix-blend-overlay"></div>
@@ -424,24 +420,47 @@
                             </div>
                         </a>
                         
-                        <!-- Host City Guides (Full Width Banner Style) -->
-                        <a href="https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/host-cities" class="sm:col-span-2 lg:col-span-3 bg-[#2A2420] border border-white/10 rounded-[20px] lg:rounded-[24px] overflow-hidden relative group cursor-pointer flex flex-col shadow-lg block transition-transform hover:-translate-y-1">
-                            <div class="w-full h-40 sm:h-56 lg:h-64 relative overflow-hidden shrink-0 bg-black">
+                    </div>
+
+                    <!-- 2-Column Bottom Grid (Travel Essentials & Host City Guides side-by-side) -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6 w-full">
+                        
+                        <!-- Travel Essentials LINKED -->
+                        <a href="https://wc2026.airtrottravels.com/essentials" class="bg-[#2A2420] border border-white/10 rounded-[20px] lg:rounded-[24px] overflow-hidden relative group cursor-pointer flex flex-col h-full shadow-lg block transition-transform hover:-translate-y-1">
+                            <div class="w-full h-40 lg:h-48 relative overflow-hidden shrink-0 bg-black">
+                                <img src="https://i.ibb.co/35g6ghVw/oziel-gomez-n7-AHammq-RX4-unsplash.jpg" alt="Travel Essentials" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
+                                <!-- Subtle Bokeh Glow -->
+                                <div class="absolute top-4 right-6 w-24 h-24 bg-brand-gold/20 rounded-full blur-[25px] pointer-events-none z-10 mix-blend-screen"></div>
+                                <div class="absolute -bottom-2 left-2 w-20 h-20 bg-white/20 rounded-full blur-[20px] pointer-events-none z-10 mix-blend-overlay"></div>
+                            </div>
+                            <div class="w-full p-5 lg:p-6 flex flex-col flex-1 relative z-10 bg-gradient-to-t from-black/20 to-transparent">
+                                <div class="w-8 h-8 lg:w-10 lg:h-10 rounded-full bg-white/10 flex items-center justify-center mb-3 shrink-0 border border-white/5">
+                                    <i class="ph ph-backpack text-white text-lg lg:text-xl"></i>
+                                </div>
+                                <h3 class="text-base lg:text-lg font-bold text-white mb-1 leading-tight tracking-wide">Travel Essentials</h3>
+                                <p class="text-xs lg:text-sm text-white/60 mb-4 pr-2">Stay connected and prepared with tools for your World Cup trip.</p>
+                                <button class="w-8 h-8 lg:w-9 lg:h-9 rounded-full bg-white text-black flex items-center justify-center shadow-md group-hover:bg-brand-blue group-hover:text-white transition-colors mt-auto self-end shrink-0 pointer-events-none">
+                                    <i class="ph-bold ph-arrow-right text-xs"></i>
+                                </button>
+                            </div>
+                        </a>
+                        
+                        <!-- Host City Guides LINKED -->
+                        <a href="https://www.wc2026.airtrottravels.com/city-guides" class="bg-[#2A2420] border border-white/10 rounded-[20px] lg:rounded-[24px] overflow-hidden relative group cursor-pointer flex flex-col h-full shadow-lg block transition-transform hover:-translate-y-1">
+                            <div class="w-full h-40 lg:h-48 relative overflow-hidden shrink-0 bg-black">
                                 <img src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=800&h=400&fit=crop" alt="Host City Skyline" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
                                 <!-- Subtle Bokeh Glow -->
                                 <div class="absolute top-1/2 left-1/4 w-32 h-32 bg-brand-blue/20 rounded-full blur-[30px] pointer-events-none z-10 mix-blend-screen -translate-y-1/2"></div>
                                 <div class="absolute bottom-4 right-1/4 w-24 h-24 bg-brand-green/20 rounded-full blur-[20px] pointer-events-none z-10 mix-blend-screen"></div>
                             </div>
-                            <div class="w-full p-5 lg:p-6 flex flex-col lg:flex-row lg:items-center justify-between relative z-10 bg-gradient-to-t from-black/20 to-transparent gap-4">
-                                <div class="flex flex-col">
-                                    <div class="w-8 h-8 lg:w-10 lg:h-10 rounded-full bg-white/10 flex items-center justify-center mb-3 shrink-0 border border-white/5">
-                                        <i class="ph ph-map-trifold text-white text-lg lg:text-xl"></i>
-                                    </div>
-                                    <h3 class="text-base lg:text-lg font-bold text-white mb-1 leading-tight tracking-wide">Host City Guides</h3>
-                                    <p class="text-xs lg:text-sm text-white/60 max-w-xl">Explore local attractions, transport networks, and dining hotspots in all 16 official host cities.</p>
+                            <div class="w-full p-5 lg:p-6 flex flex-col flex-1 relative z-10 bg-gradient-to-t from-black/20 to-transparent">
+                                <div class="w-8 h-8 lg:w-10 lg:h-10 rounded-full bg-white/10 flex items-center justify-center mb-3 shrink-0 border border-white/5">
+                                    <i class="ph ph-map-trifold text-white text-lg lg:text-xl"></i>
                                 </div>
-                                <button class="w-8 h-8 lg:w-12 lg:h-12 rounded-full bg-white text-black flex items-center justify-center shadow-md group-hover:bg-brand-blue group-hover:text-white transition-colors mt-auto lg:mt-0 self-end lg:self-center shrink-0">
-                                    <i class="ph-bold ph-arrow-right text-xs lg:text-lg"></i>
+                                <h3 class="text-base lg:text-lg font-bold text-white mb-1 leading-tight tracking-wide">Host City Guides</h3>
+                                <p class="text-xs lg:text-sm text-white/60 mb-4 pr-2">Explore local attractions, transport networks, and dining hotspots in all 16 official host cities.</p>
+                                <button class="w-8 h-8 lg:w-9 lg:h-9 rounded-full bg-white text-black flex items-center justify-center shadow-md group-hover:bg-brand-blue group-hover:text-white transition-colors mt-auto self-end shrink-0 pointer-events-none">
+                                    <i class="ph-bold ph-arrow-right text-xs"></i>
                                 </button>
                             </div>
                         </a>
