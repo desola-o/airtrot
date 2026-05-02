@@ -5,15 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>World Cup Tickets | Airtrot</title>
 
-    <!-- Fonts + Icons -->
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
     <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.0.3/src/regular/style.css" />
     <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.0.3/src/fill/style.css" />
 
-    <!-- Tailwind (if you’re using CDN) -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            green: '#3CAC3B',
+                            blue: '#2A398D',
+                            red: '#E61D25',
+                            gold: '#FFC107',
+                            dark: '#1a1a1a',
+                            panel: '#352D28',
+                            lightCard: '#EAE6E2',
+                            navBtn: '#4C423C'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
 </head>
 
-<body class="bg-[#1A1614] text-white">
+<body class="bg-[#1A1614] text-white font-sans">
 
 <main class="min-h-screen px-4 sm:px-6 lg:px-8 py-10">
 
@@ -28,8 +56,6 @@
 
         <!-- Hero -->
         <section class="bg-brand-lightCard text-[#1A1614] rounded-[32px] p-8 lg:p-12 text-center shadow-xl relative overflow-hidden mb-10">
-            <div class="absolute inset-0 opacity-30"></div>
-
             <div class="relative z-10">
                 <div class="inline-flex items-center gap-2 bg-white px-5 py-2 rounded-full text-brand-blue text-sm font-bold uppercase tracking-widest mb-5 shadow">
                     <i class="ph-bold ph-ticket"></i>
