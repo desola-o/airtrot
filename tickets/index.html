@@ -2,20 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>World Cup Tickets | Airtrot</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>World Cup 2026 Tickets | Airtrot Travels</title>
+    <meta name="description" content="Explore official FIFA World Cup 2026 ticket options or get concierge support planning your full trip around confirmed matches.">
 
-    <!-- Icons -->
-    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.0.3/src/regular/style.css" />
-    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.0.3/src/fill/style.css" />
-
-    <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
-    <!-- Tailwind Config -->
     <script>
         tailwind.config = {
             theme: {
@@ -28,117 +23,177 @@
                             green: '#3CAC3B',
                             blue: '#2A398D',
                             red: '#E61D25',
-                            gold: '#FFC107',
                             dark: '#1a1a1a',
                             panel: '#352D28',
                             lightCard: '#EAE6E2',
                             navBtn: '#4C423C'
                         }
+                    },
+                    boxShadow: {
+                        'glass': '0 25px 50px -12px rgba(0, 0, 0, 0.5), inset 0 1px 1px rgba(255,255,255,0.1)',
                     }
                 }
             }
         }
     </script>
+
+    <style>
+        body {
+            background-color: #000;
+        }
+
+        .glass-panel {
+            background: rgba(42, 36, 32, 0.3);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .pattern-dots {
+            background-image: radial-gradient(rgba(0,0,0,0.06) 1.5px, transparent 1.5px);
+            background-size: 16px 16px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.4s ease-out forwards;
+            opacity: 0;
+        }
+    </style>
 </head>
 
-<body class="bg-[#1A1614] text-white font-sans">
+<body class="min-h-screen overflow-x-hidden text-white font-sans relative flex flex-col items-center selection:bg-brand-blue selection:text-white px-4 pb-4 pt-1 sm:px-6 sm:pb-6 sm:pt-2 lg:px-12 lg:pb-12 lg:pt-4">
 
-<main class="min-h-screen px-4 sm:px-6 lg:px-8 py-10">
-
-    <div class="max-w-6xl mx-auto">
-
-        <!-- Back -->
-        <a href="/"
-           class="inline-flex items-center gap-2 mb-8 px-5 py-3 rounded-full border border-white/15 bg-white/5 text-white/80 hover:bg-white/10 transition">
-            <i class="ph-bold ph-arrow-left"></i>
-            Back to Home
-        </a>
-
-        <!-- Hero -->
-        <section class="bg-brand-lightCard text-[#1A1614] rounded-[32px] p-8 lg:p-12 text-center shadow-xl relative overflow-hidden mb-10">
-            <div class="relative z-10">
-                <div class="inline-flex items-center gap-2 bg-white px-5 py-2 rounded-full text-brand-blue text-sm font-bold uppercase tracking-widest mb-5 shadow">
-                    <i class="ph-bold ph-ticket"></i>
-                    Ticket Access
-                </div>
-
-                <h1 class="text-4xl lg:text-6xl font-bold mb-4">
-                    World Cup Tickets
-                </h1>
-
-                <p class="text-base sm:text-lg text-[#4A423C] max-w-3xl mx-auto">
-                    FIFA World Cup 2026 tickets are currently in the Last-Minute Sales Phase. Availability is limited and released on a first-come, first-served basis.
-                </p>
-            </div>
-        </section>
-
-        <!-- Options -->
-        <section class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-10">
-
-            <!-- FIFA -->
-            <div class="bg-[#2A2420] border border-brand-green/30 rounded-[24px] p-6 lg:p-8 shadow-xl">
-                <div class="flex items-center gap-3 mb-4">
-                    <div class="w-11 h-11 rounded-full bg-brand-green/15 flex items-center justify-center">
-                        <i class="ph-fill ph-ticket text-brand-green text-2xl"></i>
-                    </div>
-                    <h2 class="text-2xl lg:text-3xl font-bold">
-                        Official FIFA Tickets
-                    </h2>
-                </div>
-
-                <p class="text-white/70 text-sm sm:text-base mb-3">
-                    Browse official ticket availability, Last-Minute Sales, and verified resale options directly through FIFA.
-                </p>
-
-                <p class="text-xs text-brand-green font-semibold mb-6">
-                    Currently in Last-Minute Sales Phase — availability is limited
-                </p>
-
-                <a href="https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/tickets"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   class="inline-flex items-center justify-center gap-2 bg-brand-green hover:bg-[#329231] text-white px-7 py-4 rounded-xl text-base font-bold transition-all shadow-lg active:scale-[0.98]">
-                    View Official FIFA Tickets
-                    <i class="ph-bold ph-arrow-up-right"></i>
-                </a>
-            </div>
-
-            <!-- Concierge -->
-            <div class="bg-[#2A2420] border border-brand-blue/30 rounded-[24px] p-6 lg:p-8 shadow-xl">
-                <div class="flex items-center gap-3 mb-4">
-                    <div class="w-11 h-11 rounded-full bg-brand-blue/15 flex items-center justify-center">
-                        <i class="ph-fill ph-compass text-brand-blue text-2xl"></i>
-                    </div>
-                    <h2 class="text-2xl lg:text-3xl font-bold">
-                        Concierge Trip Support
-                    </h2>
-                </div>
-
-                <p class="text-white/70 text-sm sm:text-base mb-6">
-                    Already have tickets or targeting specific matches? Airtrot can coordinate your full trip — flights, stays, transfers, and match-week logistics.
-                </p>
-
-                <a href="https://form.typeform.com/to/qBdRUgis"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   class="inline-flex items-center justify-center gap-2 bg-brand-blue hover:opacity-90 text-white px-7 py-4 rounded-xl text-base font-bold transition-all shadow-lg active:scale-[0.98]">
-                    Plan My World Cup Trip
-                    <i class="ph-bold ph-arrow-right"></i>
-                </a>
-            </div>
-
-        </section>
-
-        <!-- Disclaimer -->
-        <section class="bg-white/5 border border-white/10 rounded-2xl p-5 text-center">
-            <p class="text-xs sm:text-sm text-white/50">
-                Airtrot Travels is not affiliated with, endorsed by, or sponsored by FIFA. Ticket availability, pricing, sales phases, and resale options are controlled by FIFA and may change without notice.
-            </p>
-        </section>
-
+    <!-- Background Environment -->
+    <div class="fixed inset-0 z-0 pointer-events-none">
+        <img src="https://i.ibb.co/MkkF9m0p/ferdinand-stohr-wo-YNcu-Q2-BLg-unsplash-1.jpg" alt="Airtrot Travels Background" class="w-full h-full object-cover object-center scale-105 filter brightness-50">
+        <div class="absolute inset-0 bg-gradient-to-tr from-[#0A0808]/80 via-[#2A221E]/60 to-[#1A1A24]/50"></div>
+        <div class="absolute inset-0 backdrop-blur-[4px]"></div>
     </div>
 
-</main>
+    <!-- Desktop Wrapper -->
+    <div class="relative z-10 w-full max-w-[1200px] flex flex-col items-center pb-12">
+
+        <!-- Top Centered Image Logo -->
+        <div class="w-full flex justify-center mb-0 z-20 relative">
+            <a href="https://airtrottravels.com" class="block transition-transform hover:scale-[1.02] active:scale-95 cursor-pointer flex items-center justify-center">
+                <img src="https://i.ibb.co/ksXB0Xrs/Airtrot-Logo-500px-1.png" alt="Airtrot Travels" class="w-[200px] sm:w-[260px] lg:w-[320px] h-auto object-contain drop-shadow-2xl -my-5 sm:-my-8 lg:-my-12">
+            </a>
+        </div>
+
+        <!-- Main Panel -->
+        <main class="w-full max-w-4xl glass-panel rounded-[24px] lg:rounded-[32px] shadow-glass flex flex-col p-4 sm:p-6 lg:p-8 border-t-white/20 border-l-white/20 overflow-hidden relative z-10 mt-1 sm:mt-2 lg:mt-4">
+
+            <!-- Back to Home Button -->
+            <div class="w-full flex justify-start mb-6 lg:mb-8 shrink-0 relative z-20">
+                <a href="https://wc2026.airtrottravels.com" class="inline-flex items-center gap-2 text-white/70 hover:text-white bg-white/5 hover:bg-white/10 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full transition-all border border-white/10 text-xs sm:text-sm font-medium shadow-sm backdrop-blur-md active:scale-95">
+                    <i class="ph-bold ph-arrow-left"></i> Back to Home
+                </a>
+            </div>
+
+            <!-- Header Section -->
+            <div class="bg-brand-lightCard rounded-[24px] lg:rounded-[28px] p-6 lg:p-10 text-[#1A1614] relative overflow-hidden flex flex-col items-center text-center shadow-lg group mb-8">
+                <div class="absolute inset-0 pattern-dots opacity-40"></div>
+                <div class="absolute left-0 top-0 w-64 h-64 bg-brand-red/10 rounded-full blur-[50px] pointer-events-none"></div>
+                <div class="absolute right-0 bottom-0 w-64 h-64 bg-brand-green/10 rounded-full blur-[50px] pointer-events-none"></div>
+
+                <div class="relative z-20 w-full max-w-2xl flex flex-col items-center">
+                    <div class="inline-flex items-center gap-2 mb-4 bg-white/80 px-4 py-2 rounded-full w-fit backdrop-blur-sm border border-black/5 shadow-sm">
+                        <i class="ph-fill ph-ticket text-brand-red"></i>
+                        <span class="text-[10px] sm:text-xs font-bold tracking-widest uppercase text-brand-red">Ticket Access</span>
+                    </div>
+
+                    <h1 class="text-3xl sm:text-4xl lg:text-5xl leading-[1.15] font-bold tracking-tight mb-4 text-[#25201D]">
+                        World Cup Tickets<br>
+                        <span class="text-brand-green">Plan Smart</span>
+                    </h1>
+
+                    <p class="text-sm sm:text-base font-medium text-[#4A423C] max-w-lg mx-auto">
+                        View official FIFA ticket options or let Airtrot help plan the full trip around your confirmed matches.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Self-Service Ticket Option -->
+            <div class="w-full bg-white/5 backdrop-blur-sm border border-white/10 rounded-[24px] p-6 lg:p-8 shadow-xl relative z-20 animate-fade-in mb-6">
+                <div class="text-center max-w-2xl mx-auto">
+                    <div class="inline-flex items-center gap-2 mb-4 bg-white/5 px-4 py-2 rounded-full border border-white/10">
+                        <i class="ph-fill ph-ticket text-brand-green"></i>
+                        <span class="text-[10px] sm:text-xs font-bold tracking-widest uppercase text-white/80">
+                            Self-Service Tickets
+                        </span>
+                    </div>
+
+                    <h3 class="text-2xl lg:text-3xl font-bold text-white mb-3">
+                        View official FIFA ticket options
+                    </h3>
+
+                    <p class="text-sm sm:text-base text-white/70 mb-3">
+                        Browse current ticket availability, Last-Minute Sales, and official resale options directly through FIFA.
+                    </p>
+
+                    <p class="text-xs text-brand-green font-semibold mb-6">
+                        Currently in Last-Minute Sales Phase — availability is limited.
+                    </p>
+
+                    <a href="https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/tickets"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="inline-flex items-center justify-center gap-2 bg-white hover:bg-gray-200 text-brand-dark px-8 py-4 rounded-xl text-base font-bold transition-all shadow-lg active:scale-[0.98]">
+                        View Official FIFA Tickets
+                        <i class="ph-bold ph-arrow-up-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Concierge Option -->
+            <div class="w-full bg-[#2A2420] border border-white/10 rounded-[24px] p-6 lg:p-8 shadow-xl relative z-20 animate-fade-in" style="animation-delay: 100ms;">
+                <div class="text-center max-w-2xl mx-auto">
+                    <div class="inline-flex items-center gap-2 mb-4 bg-white/5 px-4 py-2 rounded-full border border-white/10">
+                        <i class="ph-fill ph-star text-brand-blue"></i>
+                        <span class="text-[10px] sm:text-xs font-bold tracking-widest uppercase text-white/80">
+                            Concierge Option
+                        </span>
+                    </div>
+
+                    <h3 class="text-2xl lg:text-3xl font-bold text-white mb-3">
+                        Need help planning around your tickets?
+                    </h3>
+
+                    <p class="text-sm sm:text-base text-white/70 mb-6">
+                        Already have tickets or targeting specific matches? Airtrot can help coordinate flights, stays, transfers, and match-week logistics.
+                    </p>
+
+                    <a href="https://form.typeform.com/to/qBdRUgis"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="inline-flex items-center justify-center gap-2 bg-brand-blue hover:bg-[#23307A] text-white px-8 py-4 rounded-xl text-base font-bold transition-all shadow-lg active:scale-[0.98]">
+                        Plan My World Cup Trip
+                        <i class="ph-bold ph-arrow-up-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Trust Indicators -->
+            <div class="flex flex-wrap items-center justify-center gap-4 sm:gap-8 mt-8 text-xs sm:text-sm text-white/60 font-medium animate-fade-in" style="animation-delay: 200ms;">
+                <span class="flex items-center gap-2"><i class="ph-fill ph-ticket text-brand-red text-lg"></i> Official FIFA Path</span>
+                <span class="flex items-center gap-2"><i class="ph-fill ph-compass text-brand-blue text-lg"></i> Trip Coordination</span>
+                <span class="flex items-center gap-2"><i class="ph-fill ph-shield-check text-amber-500 text-lg"></i> Clear Guidance</span>
+            </div>
+
+        </main>
+
+        <!-- Legal Disclaimer -->
+        <div class="w-full text-center mt-6 lg:mt-8 px-4 opacity-60 hover:opacity-100 transition-opacity duration-300">
+            <p class="text-[9px] sm:text-[10px] text-white/60 max-w-3xl mx-auto leading-relaxed">
+                Airtrot Travels is not affiliated with, endorsed by, or sponsored by FIFA. Ticket availability, pricing, sales phases, and resale options are controlled by FIFA and may change without notice.
+            </p>
+        </div>
+    </div>
 
 </body>
 </html>
