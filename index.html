@@ -156,7 +156,7 @@
                         <a href="https://airtrottravels.com" class="px-4 sm:px-6 py-1.5 sm:py-2.5 rounded-full text-xs sm:text-sm font-medium text-white/60 hover:text-white hover:bg-white/5 transition-all">Home</a>
                         <a href="https://wc2026.airtrottravels.com/flights" class="px-4 sm:px-6 py-1.5 sm:py-2.5 rounded-full text-xs sm:text-sm font-medium text-white/60 hover:text-white hover:bg-white/5 transition-all">Flights</a>
                         <a href="https://wc2026.airtrottravels.com/stays" class="px-4 sm:px-6 py-1.5 sm:py-2.5 rounded-full text-xs sm:text-sm font-medium text-white/60 hover:text-white hover:bg-white/5 transition-all">Accommodation</a>
-                        <a href="https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/tickets" target="_blank" rel="noopener noreferrer" class="px-4 sm:px-6 py-1.5 sm:py-2.5 rounded-full text-xs sm:text-sm font-medium text-white/60 hover:text-white hover:bg-white/5 transition-all">Match tickets</a>
+                        <a href="#ticket-options" class="px-4 sm:px-6 py-1.5 sm:py-2.5 rounded-full text-xs sm:text-sm font-medium text-white/60 hover:text-white hover:bg-white/5 transition-all">Match tickets</a>
                         <a href="https://store.fifa.com/en-gb" class="px-4 sm:px-6 py-1.5 sm:py-2.5 rounded-full text-xs sm:text-sm font-medium text-white/60 hover:text-white hover:bg-white/5 transition-all">Shop</a>
                     </div>
                 </nav>
@@ -338,7 +338,7 @@
                         </a>
 
                         <!-- Match Tickets LINKED to FIFA -->
-                        <a href="https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/tickets" target="_blank" rel="noopener noreferrer" class="bg-[#2A2420] border border-white/10 rounded-[20px] lg:rounded-[24px] overflow-hidden relative group cursor-pointer flex flex-col h-full shadow-lg block transition-transform hover:-translate-y-1">
+                        <a href="#ticket-options" class="bg-[#2A2420] border border-white/10 rounded-[20px] lg:rounded-[24px] overflow-hidden relative group cursor-pointer flex flex-col h-full shadow-lg block transition-transform hover:-translate-y-1">
                             <div class="w-full h-40 lg:h-48 relative overflow-hidden shrink-0 bg-black">
                                 <img src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=600&h=400&fit=crop" alt="Stadium Matches" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
                                 <div class="absolute -bottom-6 -left-2 w-32 h-32 bg-brand-red/30 rounded-full blur-[30px] pointer-events-none z-10 mix-blend-screen"></div>
@@ -472,6 +472,61 @@
 
                     </div>
                 </div>
+
+                <!-- Ticket Options Decision Block -->
+<div id="ticket-options" class="w-full bg-[#2A2420] border border-brand-red/30 rounded-[24px] p-6 lg:p-8 shadow-xl">
+
+    <div class="text-center max-w-2xl mx-auto mb-6">
+        <h3 class="text-2xl lg:text-3xl font-bold text-white mb-3">
+            Match Tickets
+        </h3>
+        <p class="text-sm sm:text-base text-white/70">
+            Choose how you’d like to move forward — self-service through FIFA or concierge support for the full trip around your tickets.
+        </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+        <!-- Self-Service Option -->
+        <div class="bg-black/40 border border-white/10 rounded-2xl p-6 text-center">
+            <h4 class="text-xl font-bold text-white mb-2">
+                Self-Service Ticket Options
+            </h4>
+            <p class="text-white/70 text-sm mb-3">
+                View current ticket availability, Last-Minute Sales, and official resale options directly through FIFA.
+            </p>
+            <p class="text-xs text-brand-green font-semibold mb-5">
+                Currently in Last-Minute Sales Phase — availability is limited.
+            </p>
+            <a href="https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/tickets"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="inline-flex items-center justify-center gap-2 bg-brand-green hover:bg-[#329231] text-white px-6 py-3 rounded-xl text-sm font-bold transition-all shadow-lg active:scale-[0.98]">
+                View Official FIFA Tickets
+                <i class="ph-bold ph-arrow-up-right"></i>
+            </a>
+        </div>
+
+        <!-- Concierge Option -->
+        <div class="bg-black/40 border border-white/10 rounded-2xl p-6 text-center">
+            <h4 class="text-xl font-bold text-white mb-2">
+                Concierge Trip Support
+            </h4>
+            <p class="text-white/70 text-sm mb-5">
+                Already have tickets or target matches? Airtrot can help coordinate flights, stays, transfers, and match-week logistics.
+            </p>
+            <a href="https://form.typeform.com/to/qBdRUgis"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="inline-flex items-center justify-center gap-2 bg-brand-blue hover:opacity-90 text-white px-6 py-3 rounded-xl text-sm font-bold transition-all shadow-lg active:scale-[0.98]">
+                Plan My World Cup Trip
+                <i class="ph-bold ph-arrow-right"></i>
+            </a>
+        </div>
+
+    </div>
+
+</div>
 
                 <!-- WHY BOOK WITH US SECTION -->
                 <div class="flex flex-col gap-4">
